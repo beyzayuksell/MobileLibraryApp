@@ -27,10 +27,6 @@ public class MainData implements Serializable {
         return ID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
     public String getText() {
         return text;
     }

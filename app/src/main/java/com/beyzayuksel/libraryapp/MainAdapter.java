@@ -33,6 +33,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
+    //  Create which layout in using Recyler view
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -116,6 +117,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 dataList.remove(position);
                 notifyItemRemoved(position);
                 notifyItemRangeChanged(position, dataList.size());
+
+                // *Kendime Not*
+                // Position u aldıktan sonra dialog ekle.
+                // Delete içinde emin misiniz adlı dialog
             }
         });
 
