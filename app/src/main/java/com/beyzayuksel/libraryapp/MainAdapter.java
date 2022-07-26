@@ -126,14 +126,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
                 // Initialize and assign variable
                 TextView textView = dialog.findViewById(R.id.delete_text);
-                Button btYes = dialog.findViewById(R.id.bt_yes);
-                Button btNo = dialog.findViewById(R.id.bt_no);
+                Button btDeleteYes = dialog.findViewById(R.id.delete_yes);
+                Button btDeleteNo = dialog.findViewById(R.id.delete_no);
 
                 // Set text on data for deleting
                 textView.setText("Are you sure you want to delete " + d.getText() + " ?"); // book name
 
                 // Listener Yes btn for delete.
-                btYes.setOnClickListener(new View.OnClickListener(){
+                btDeleteYes.setOnClickListener(new View.OnClickListener(){
 
                     @Override
                     public void onClick(View v) {
@@ -152,8 +152,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 });  // end of yes button
 
                 // Listener No btn for delete.
-                btNo.setOnClickListener(new View.OnClickListener(){
-
+                btDeleteNo.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
                         // Cancel from dialog

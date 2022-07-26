@@ -24,20 +24,22 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bt_yes"
+            android:id="@+id/delete_yes"
             android:layout_weight="1"
+            android:backgroundTint="@color/green"
             android:text="YES"
             android:layout_marginTop="8dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bt_no"
+            android:id="@+id/delete_no"
             android:layout_weight="1"
+            android:backgroundTint="@color/red"
             android:text="NO"
             android:layout_marginTop="8dp" />
 
     </LinearLayout>
-    
+
 
 </LinearLayout>

@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bt_update"
+        android:backgroundTint="@color/blue"
         android:text="Update"
         android:layout_marginTop="8dp" />
 
