@@ -11,6 +11,8 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+// Contsruct logic in this class
+// So, this mean is that this class Associate All class(RoomDB.java, MainData.java, loyouts)
 public class MainActivity extends AppCompatActivity {
 
     // Initialize variable
@@ -21,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     List<MainData> dataList = new ArrayList<>();
     LinearLayoutManager linearLayoutManager;
     RoomDB database;
-
-
+    // Adapter for recycler view ui.
+    MainAdapter adapter;
 
 
     @Override

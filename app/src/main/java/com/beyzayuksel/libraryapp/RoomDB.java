@@ -1,7 +1,5 @@
 package com.beyzayuksel.libraryapp;
 
-// Room Database is Local Database in Android Std.
-
 import android.content.Context;
 
 import androidx.room.Database;
@@ -34,5 +32,14 @@ public abstract class RoomDB extends RoomDatabase {
         return database;
     }
 
-    
+    // Create DAO
+    // DAO(Data Access Object) for Info Security
+    public abstract MainDao mainDao();
+
+
 }
+
+// Room Database is local database in Android Studio.
+// Room is ORM's library. QRM(Object Relational Mapping)
+// ORM is bridge between code blocks and database.
+// Room lib uses on SQLite database and room lib provides absract layer on SQLite db.
