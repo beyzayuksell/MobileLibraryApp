@@ -16,7 +16,7 @@ public abstract class RoomDB extends RoomDatabase {
     // Define db name, ex:libraryDB
     private static String DATABASE_NAME = "database";
 
-    // *Singleton Pattern* - One Object(create only one database)
+    // *Singleton Pattern* - Create only one instance
     public synchronized static RoomDB getInstance(Context context){
         // Check Condition
         if(database == null){

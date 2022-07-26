@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     // Initialize variable
-    // Pull library datalist to db
+    // Pull datalist to db
     private List<MainData> dataList;
     private Activity context;
     // Db instance need for datalist.
@@ -82,7 +82,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 Button btUpdate = dialog.findViewById(R.id.bt_update);
 
                 // Set text on edit text
-                editText.setText(sText); // book name
+                editText.setText(sText);
 
                 // Listener update btn
                 btUpdate.setOnClickListener(new View.OnClickListener(){
