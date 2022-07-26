@@ -110,19 +110,58 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             public void onClick(View v) {
                 // Initialize main data
                 MainData d = dataList.get(holder.getAdapterPosition());
-                // Delete text from database
-                database.mainDao().delete(d);
-                // Notify when data is deleted
-                int position = holder.getAdapterPosition();
-                dataList.remove(position);
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, dataList.size());
 
-                // *Kendime Not*
-                // Position u aldıktan sonra dialog ekle.
-                // Delete içinde emin misiniz adlı dialog
+                // Create dialog -- for delete
+                Dialog dialog = new Dialog(context);
+                // Set context view -- layout for update
+                dialog.setContentView(R.layout.dialog_delete);
+                // Initialize width
+                int width = WindowManager.LayoutParams.MATCH_PARENT;
+                // Initialize height
+                int height = WindowManager.LayoutParams.WRAP_CONTENT;
+                // Set layout
+                dialog.getWindow().setLayout(width,height);
+                // Show dialog
+                dialog.show();
+
+                // Initialize and assign variable
+                TextView textView = dialog.findViewById(R.id.delete_text);
+                Button btYes = dialog.findViewById(R.id.bt_yes);
+                Button btNo = dialog.findViewById(R.id.bt_no);
+
+                // Set text on data for deleting
+                textView.setText("Are you sure you want to delete " + d.getText() + " ?"); // book name
+
+                // Listener Yes btn for delete.
+                btYes.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        // Dismiss dialog
+                        dialog.dismiss();
+
+                        // Delete text from database
+                        database.mainDao().delete(d);
+                        // Notify when data is deleted
+                        int position = holder.getAdapterPosition();
+                        dataList.remove(position);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, dataList.size());
+
+                    }
+                });  // end of yes button
+
+                // Listener No btn for delete.
+                btNo.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        // Cancel from dialog
+                        dialog.cancel();
+                    }
+                });  // end of no button
             }
-        });
+        }); // end of delete(rubbish icon) button
 
     }
 
