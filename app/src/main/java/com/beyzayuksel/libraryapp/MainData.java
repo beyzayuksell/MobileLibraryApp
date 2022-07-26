@@ -21,8 +21,6 @@ public class MainData implements Serializable {
     private String text;
 
     // Getter - Setter
-    // For Variable Update
-
     public int getID() {
         return ID;
     }
